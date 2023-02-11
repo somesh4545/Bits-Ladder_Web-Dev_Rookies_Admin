@@ -1,5 +1,4 @@
-import { Box, IconButton, MenuItem, Popover, styled } from "@mui/material";
-import { H6 } from "components/Typography";
+import { Box, styled } from "@mui/material";
 import { FC, useRef, useState } from "react";
 
 // dummy language options
@@ -52,7 +51,7 @@ const LanguagePopover: FC = () => {
 
   return (
     <>
-      <IconButton onClick={handleOpen} ref={anchorRef}>
+      {/* <IconButton onClick={handleOpen} ref={anchorRef}>
         <IconWrapper>
           <img alt={selectedLanguage.label} src={selectedLanguage.icon} />
         </IconWrapper>
@@ -77,7 +76,7 @@ const LanguagePopover: FC = () => {
             </ItemWrapper>
           </MenuItem>
         ))}
-      </Popover>
+      </Popover> */}
     </>
   );
 };

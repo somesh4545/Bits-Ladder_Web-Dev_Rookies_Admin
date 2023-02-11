@@ -1,9 +1,7 @@
-import { Apps } from "@mui/icons-material";
-import { Avatar, Badge, Box, IconButton, useTheme } from "@mui/material";
+import { Avatar, Box, useTheme } from "@mui/material";
 import FlexBox from "components/FlexBox";
 import { H6, Tiny } from "components/Typography";
 import { FC, Fragment, useRef, useState } from "react";
-import PopoverLayout from "./PopoverLayout";
 
 // dummy  data
 const services = [
@@ -33,7 +31,7 @@ const ServicePopover: FC = () => {
 
   return (
     <Fragment>
-      <IconButton ref={anchorRef} onClick={() => setOpen(true)}>
+      {/* <IconButton ref={anchorRef} onClick={() => setOpen(true)}>
         <Badge color="error" badgeContent={0}>
           <Apps sx={{ color: "text.disabled" }} />
         </Badge>
@@ -49,7 +47,7 @@ const ServicePopover: FC = () => {
         {services.map((service) => (
           <ListItem service={service} key={service.id} />
         ))}
-      </PopoverLayout>
+      </PopoverLayout> */}
     </Fragment>
   );
 };

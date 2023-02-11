@@ -7,34 +7,19 @@ const index = [
     path: "/dashboard",
   },
   {
-    title: "User Profile",
+    title: "Workers",
     Icon: Icons.UserProfileIcon,
-    path: "/dashboard/user-profile",
+    path: "/dashboard/workers",
   },
   {
-    title: "User Grid",
-    Icon: Icons.UserGridIcon,
-    path: "/dashboard/user-grid",
+    title: "Clients",
+    Icon: Icons.UserProfileIcon,
+    path: "/dashboard/clients",
   },
   {
-    title: "User List",
+    title: "Pairs",
     Icon: Icons.UserManagementIcon,
-    path: "/dashboard/user-list",
-  },
-  {
-    title: "Add user",
-    Icon: Icons.AddUserIcon,
-    path: "/dashboard/add-user",
-  },
-  {
-    title: "Login",
-    Icon: Icons.LoginIcon,
-    path: "/login",
-  },
-  {
-    title: "Register",
-    Icon: Icons.SessionsIcon,
-    path: "/Register",
+    path: "/dashboard/pairs",
   },
 ];
 

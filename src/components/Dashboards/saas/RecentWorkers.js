@@ -1,5 +1,4 @@
 import {
-  Box,
   Card,
   styled,
   Table,
@@ -8,8 +7,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { H5, Small } from "components/Typography";
-import { FC } from "react";
+import { H5 } from "components/Typography";
 import ScrollBar from "simplebar-react";
 
 const commonCSS = {
@@ -38,10 +36,10 @@ const BodyTableCell = styled(TableCell)(({ theme }) => ({
   [theme.breakpoints.between(960, 1270)]: { ...commonCSS },
 }));
 
-const RecentOrders: FC = () => {
+const RecentOrders = (props) => {
   return (
     <Card sx={{ padding: "2rem" }}>
-      <H5>Recent Orders</H5>
+      <H5>New Workers</H5>
 
       <ScrollBar>
         <Table>
@@ -49,42 +47,29 @@ const RecentOrders: FC = () => {
             sx={{ borderBottom: "1.5px solid", borderColor: "divider" }}
           >
             <TableRow>
-              <HeadTableCell>Tracking No</HeadTableCell>
-              <HeadTableCell>Product Name</HeadTableCell>
-              <HeadTableCell>Price</HeadTableCell>
-              <HeadTableCell>Total Order</HeadTableCell>
-              <HeadTableCell>Total amount</HeadTableCell>
+              <HeadTableCell>Worker ID</HeadTableCell>
+              <HeadTableCell>Name</HeadTableCell>
+              <HeadTableCell>Aadhar Card</HeadTableCell>
+              <HeadTableCell>Date</HeadTableCell>
             </TableRow>
           </TableHead>
 
           <TableBody>
-            {orderList.map((item, index) => (
-              <TableRow key={index}>
-                <BodyTableCell>{item.orderNo}</BodyTableCell>
-                <BodyTableCell>
-                  <Box display="flex" alignItems="center">
-                    <img src={item.image} alt="product title" width="40px" />
-                    <Small ml="1rem">{item.name}</Small>
-                  </Box>
-                </BodyTableCell>
-                <BodyTableCell>${item.price}</BodyTableCell>
-                <BodyTableCell>
-                  <Box
-                    sx={{
-                      backgroundColor: "secondary.200",
-                      borderRadius: 11,
-                      maxWidth: 55,
-                      padding: "0.3rem",
-                      textAlign: "center",
-                      color: "secondary.400",
-                    }}
-                  >
-                    {item.totalOrder}
-                  </Box>
-                </BodyTableCell>
-                <BodyTableCell>{item.totalAmount}</BodyTableCell>
-              </TableRow>
-            ))}
+            {props.data
+              ? props.data.map((item, index) => (
+                  <TableRow key={index}>
+                    <BodyTableCell>{item._id}</BodyTableCell>
+                    <BodyTableCell>{item.name}</BodyTableCell>
+                    <BodyTableCell>
+                      <a href={item.aadhar_card_url} target="_blank">
+                        {item.aadhar_id}
+                      </a>
+                    </BodyTableCell>
+
+                    <BodyTableCell>{item.createdAt}</BodyTableCell>
+                  </TableRow>
+                ))
+              : null}
           </TableBody>
         </Table>
       </ScrollBar>

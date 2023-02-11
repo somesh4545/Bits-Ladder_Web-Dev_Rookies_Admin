@@ -27,6 +27,11 @@ const DashboardSaaS = Loadable(lazy(() => import("./pages/dashboards/SaaS")));
 // user profile
 const UserProfile = Loadable(lazy(() => import("./pages/UserProfile")));
 
+// workers page
+const WorkersPage = Loadable(lazy(() => import("./pages/Workers")));
+const CLientPage = Loadable(lazy(() => import("./pages/Client")));
+const PairsPage = Loadable(lazy(() => import("./pages/Pairs")));
+
 // user management
 const UserList = Loadable(
   lazy(() => import("./pages/userManagement/UserList"))
@@ -84,21 +89,16 @@ const routes = [
         element: <DashboardSaaS />,
       },
       {
-        path: "user-profile",
-        element: <UserProfile />,
-      },
-
-      {
-        path: "user-list",
-        element: <UserList />,
+        path: "workers",
+        element: <WorkersPage />,
       },
       {
-        path: "user-grid",
-        element: <UserGrid />,
+        path: "clients",
+        element: <CLientPage />,
       },
       {
-        path: "add-user",
-        element: <AddNewUser />,
+        path: "pairs",
+        element: <PairsPage />,
       },
     ],
   },

@@ -1,12 +1,8 @@
-import { Badge, Box, ButtonBase, Divider, styled } from "@mui/material";
-import FlexBox from "components/FlexBox";
-import { H6, Small, Tiny } from "components/Typography";
-import UkoAvatar from "components/UkoAvatar";
+import { styled } from "@mui/material";
+import { Small } from "components/Typography";
 import useAuth from "hooks/useAuth";
 import { FC, Fragment, useRef, useState } from "react";
-import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import PopoverLayout from "./PopoverLayout";
 
 // styled components
 const StyledSmall = styled(Small)(({ theme }) => ({
@@ -35,7 +31,7 @@ const ProfilePopover: FC = () => {
 
   return (
     <Fragment>
-      <ButtonBase disableRipple ref={anchorRef} onClick={() => setOpen(true)}>
+      {/* <ButtonBase disableRipple ref={anchorRef} onClick={() => setOpen(true)}>
         <Badge
           overlap="circular"
           variant="dot"
@@ -105,7 +101,7 @@ const ProfilePopover: FC = () => {
             Sign Out
           </StyledSmall>
         </Box>
-      </PopoverLayout>
+      </PopoverLayout> */}
     </Fragment>
   );
 };
